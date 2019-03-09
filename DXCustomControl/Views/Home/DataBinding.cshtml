@@ -1,0 +1,46 @@
+﻿@model List<DXCustomControl.Models.Department>
+
+@Html.LOS().TreeList(
+    settings => {
+        settings.Name = "treeList";
+        settings.CallbackRouteValues = new {  Action = "DataBindingPartial" };
+        settings.SettingsEditing.AddNewNodeRouteValues = new { Action = "OnModifyDepartment" };
+        settings.SettingsEditing.UpdateNodeRouteValues = new { Action = "OnModifyDepartment" };
+        settings.Width = Unit.Percentage(100);
+
+        settings.AutoGenerateColumns = false;
+        settings.KeyFieldName = "ID";
+        settings.ParentFieldName = "ParentID";
+
+        settings.Columns.Add("DepartmentName", "Department");
+        settings.Columns.AddSpinColumn(
+            column =>
+            {
+                column.FieldName = "Budget";
+                column.PropertiesEdit.DisplayFormatString = "{0:C}";
+                column.PropertiesEdit.NumberType = NumberType.Integer;
+                column.PropertiesEdit.NumberFormatType = NumberFormatType.Number;
+            }
+        );
+        settings.DataSource = Model;
+
+
+        // settings.Columns.Add(
+        //    column =>
+        //    {
+        //        column.FieldName = "Budget";
+        //        column.PropertiesEdit.DisplayFormatString = "{0:C}";
+        //    }
+        //);
+        settings.Columns.Add(column=> {
+            column.FieldName = "Location";
+            column.ColumnType = MVCxTreeListColumnType.TextBox;
+            (column.PropertiesEdit as TextBoxProperties).ClientSideEvents.Init = "function(){alert('??')}";
+        });
+        settings.Columns.Add("Phone1", "Phone");
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.VisibleIndex = settings.Columns.Count;
+
+    }
+).Bind(Model).GetHtml()
