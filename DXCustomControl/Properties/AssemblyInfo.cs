@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DXCustomControl")]
+[assembly: AssemblyTitle("ISTS.Mvc")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DXCustomControl")]
-[assembly: AssemblyCopyright("Copyright ? 2019")]
+[assembly: AssemblyProduct("ISTS.Mvc")]
+[assembly: AssemblyCopyright("Copyright ? Bùi Văn Phong 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
