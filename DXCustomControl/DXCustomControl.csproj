@@ -231,7 +231,8 @@
     <Compile Include="CustomControl\SpinEdit\LOSSpinEditExtension.cs" />
     <Compile Include="CustomControl\SpinEdit\LOSSpinEditSettings.cs" />
     <Compile Include="CustomControl\SpinEdit\SpinEditClientSideEvents.cs" />
-    <Compile Include="CustomControl\TreeList\LOSTreeListExtension.cs" />
+    <Compile Include="CustomControl\TreeList\LOSTreeListColumnType.cs" />
+    <Compile Include="CustomControl\TreeList\LOSTreeListEditDataColumn.cs" />
     <Compile Include="CustomControl\TreeList\LOSTreeListSettings.cs" />
     <Compile Include="CustomControl\TreeList\LOSTreeListSettings1.cs" />
     <Compile Include="CustomControl\Utils\ModelExtensionsHelper.cs" />

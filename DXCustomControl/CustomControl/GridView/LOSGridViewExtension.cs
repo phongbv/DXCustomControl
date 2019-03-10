@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSGridSettings : GridViewSettings
     {

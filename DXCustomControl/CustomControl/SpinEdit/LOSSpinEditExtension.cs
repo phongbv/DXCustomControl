@@ -6,7 +6,7 @@ using DevExpress.Web;
 using DevExpress.Web.Mvc;
 using ISTS.Core.Validation.Attributes;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSSpinEditExtension : TextBoxExtension
     {

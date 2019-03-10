@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public static class LOSHtmlHelperExtension
     {

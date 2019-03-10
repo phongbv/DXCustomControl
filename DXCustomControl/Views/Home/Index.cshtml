@@ -1,5 +1,7 @@
 @*@model System.Collections.IEnumerable
 
 @Html.Partial("GridViewPartialView", Model)*@
+<form autocomplete="off">
 
-@Html.Action("DataBindingPartial")
+    @Html.Action("DataBindingPartial")
+</form>

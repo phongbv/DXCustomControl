@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 using System.Web.Mvc;
 using DevExpress.Web.Internal;
 using DevExpress.Web.Mvc.Internal;
-using LOS.CustomControl.Utils;
+using ISTS.Mvc.Utils;
 using System.Web;
 using System.Web.Mvc.Html;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSExtensionsFactory<ModelType>
     {

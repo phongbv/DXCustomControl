@@ -1,7 +1,7 @@
 ﻿using DevExpress.Web;
 using DevExpress.Web.Mvc;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSSpinEditSettings : TextBoxSettings
     {

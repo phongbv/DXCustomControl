@@ -1,6 +1,6 @@
 ﻿using DevExpress.Web;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSSpinEditClientSideEvents : TextBoxClientSideEvents
     {

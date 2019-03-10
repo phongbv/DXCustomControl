@@ -4,7 +4,7 @@ using DevExpress.Web;
 using DevExpress.Web.Internal;
 using System.Web.Mvc;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSSpinEditProperties : TextBoxProperties
     {

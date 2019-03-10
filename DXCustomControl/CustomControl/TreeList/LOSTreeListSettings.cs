@@ -3,17 +3,17 @@ using DevExpress.Web.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using DevExpress.Web.ASPxTreeList;
 using DevExpress.Web.Data;
 using DevExpress.Utils;
 using ISTS.Core.Validation.Attributes;
 using System.Reflection;
 using System.Web.Mvc;
-using LOS.CustomControl;
+using ISTS.Mvc;
 using System.Web.UI.WebControls;
+using ISTS.Mvc.TreeList;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class LOSTreeListSettings
     {
@@ -34,6 +34,8 @@ namespace LOS.CustomControl
             Columns = new LOSTreeListColumnCollection(Settings.Columns);
         }
         public object DataSource { get; set; }
+        public LOSTreeListColumnCollection Columns { get; }
+        #region DevExpress
         public string Name { get => Settings.Name; set { Settings.Name = value; } }
         public Unit Width { get => Settings.Width; set { Settings.Width = value; } }
         public Unit Height { get => Settings.Height; set { Settings.Height = value; } }
@@ -59,7 +61,7 @@ namespace LOS.CustomControl
         public MVCxTreeListSettingsBehavior SettingsBehavior => Settings.SettingsBehavior;
         public MVCxTreeListSettingsPopupEditForm SettingsPopupEditForm => Settings.SettingsPopupEditForm;
         public MVCxTreeListSummaryCollection Summary => Settings.Summary;
-        public LOSTreeListColumnCollection Columns { get; }
+       
         public MVCxTreeListCommandColumn CommandColumn => Settings.CommandColumn;
         public TreeListToolbarItemClickEventHandler ToolbarItemClick
         {
@@ -295,7 +297,8 @@ namespace LOS.CustomControl
         public void SetPreviewTemplateContent(string content)
         {
             Settings.SetPreviewTemplateContent(content);
-        }
+        } 
+        #endregion
     }
 
     public class LOSTreeListColumnCollection : DevExpress.Web.ASPxTreeList.TreeListColumnCollection
@@ -308,14 +311,17 @@ namespace LOS.CustomControl
         {
             this.Collection = columns;
         }
-        //public LOSTreeListColumnCollection()
         public LOSTreeListColumnCollection(MVCxTreeListColumnCollection columns, System.Web.Mvc.ModelMetadata modelMetadata, ViewContext viewContext) : this(columns)
         {
             this.modelMetadata = modelMetadata;
             this.viewContext = viewContext;
         }
-        public void Add(Action<MVCxTreeListColumn> method)
+        public void Add(Action<LOSTreeListColumn> method)
         {
+            LOSTreeListColumn column = new LOSTreeListColumn(modelMetadata);
+            method.Invoke(column);
+            Collection.Add(column);
+            base.Add(column);
 
         }
         public MVCxTreeListColumn Add()

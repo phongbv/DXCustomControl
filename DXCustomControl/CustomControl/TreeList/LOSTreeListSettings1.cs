@@ -2,7 +2,7 @@
 //using DevExpress.Web.Internal;
 //using DevExpress.Web.Mvc;
 //using ISTS.Core.Validation.Attributes;
-//using LOS.CustomControl;
+//using ISTS.Mvc;
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;

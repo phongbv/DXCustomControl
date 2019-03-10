@@ -6,7 +6,7 @@ using DevExpress.Web.Mvc.UI;
 using DevExpress.Web;
 using System.Web.UI.WebControls;
 
-namespace LOS.CustomControl
+namespace ISTS.Mvc
 {
     public class DropDownListEditExtension : DropDownEditExtension
     {

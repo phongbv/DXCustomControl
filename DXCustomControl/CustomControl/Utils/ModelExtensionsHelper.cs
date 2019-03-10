@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace LOS.CustomControl.Utils
+namespace ISTS.Mvc.Utils
 {
     public class ModelExtensionsHelper
     {

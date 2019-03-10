@@ -13,13 +13,14 @@
         settings.ParentFieldName = "ParentID";
 
         settings.Columns.Add("DepartmentName", "Department");
-        settings.Columns.AddSpinColumn(
+        settings.Columns.Add(
             column =>
             {
                 column.FieldName = "Budget";
                 column.PropertiesEdit.DisplayFormatString = "{0:C}";
-                column.PropertiesEdit.NumberType = NumberType.Integer;
-                column.PropertiesEdit.NumberFormatType = NumberFormatType.Number;
+                column.ColumnType = ISTS.Mvc.Common.LOSTreeListColumnType.SpinEdit; 
+                //column.PropertiesEdit.NumberType = NumberType.Integer;
+                //column.PropertiesEdit.NumberFormatType = NumberFormatType.Number;
             }
         );
         settings.DataSource = Model;
@@ -34,8 +35,7 @@
         //);
         settings.Columns.Add(column=> {
             column.FieldName = "Location";
-            column.ColumnType = MVCxTreeListColumnType.TextBox;
-            (column.PropertiesEdit as TextBoxProperties).ClientSideEvents.Init = "function(){alert('??')}";
+            column.ColumnType = ISTS.Mvc.Common.LOSTreeListColumnType.TextBox;
         });
         settings.Columns.Add("Phone1", "Phone");
         settings.CommandColumn.EditButton.Visible = true;
